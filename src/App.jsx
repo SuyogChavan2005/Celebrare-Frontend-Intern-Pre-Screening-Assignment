@@ -273,7 +273,7 @@ export default function App() {
         )}
 
         <footer className="mt-20 border-t border-[#cdd5d8] pt-6 text-xs text-[#5b6b75]">
-          Built with React, Vite and Tailwind CSS. Photos from Picsum Photos.
+          Built with React, Vite and Tailwind CSS. Photos from Picsum Photos by Suyog Chavan.
         </footer>
       </main>
 
