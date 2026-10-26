@@ -1,0 +1,2 @@
+# Celebrare-Frontend-Intern-Pre-Screening-Assignment
+Celebrare Photo Gallery is a responsive photo gallery web application built with React, Vite, and Tailwind CSS. The project demonstrates modern React development practices, including custom hooks, state management with useReducer, performance optimization with useCallback and useMemo, and persistent data storage using the browser's localStorage.
