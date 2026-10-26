@@ -1,24 +1,64 @@
-<<<<<<< HEAD
-# React + Vite
+# Celebrare Photo Gallery Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite + Tailwind CSS photo gallery using Picsum Photos. It supports author search, favourites managed with `useReducer`, and persistence with `localStorage`.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20.19+ or 22.12+ recommended for current Vite releases
+- npm
+- Internet access for the Picsum Photos API and images
 
-## React Compiler
+## Run locally
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+```bash
+npm install
+npm run dev
+```
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+Open the local URL printed by Vite (normally `http://localhost:5173`).
 
-## Expanding the ESLint configuration
+## Verify a production build
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# Celebrare-Frontend-Intern-Pre-Screening-Assignment
-Celebrare Photo Gallery is a responsive photo gallery web application built with React, Vite, and Tailwind CSS. The project demonstrates modern React development practices, including custom hooks, state management with useReducer, performance optimization with useCallback and useMemo, and persistent data storage using the browser's localStorage.
->>>>>>> e3c40c317468135334876ee0c3b5eadc44f77bd9
+```bash
+npm run build
+npm run preview
+```
+
+## Project structure
+
+```text
+src/
+├── components/
+│   ├── LoadingState.jsx
+│   └── PhotoCard.jsx
+├── hooks/
+│   ├── useFavorites.js
+│   └── useFetchPhotos.js
+├── App.jsx
+├── index.css
+└── main.jsx
+index.html
+vite.config.js
+package.json
+```
+
+## Requirement checklist
+
+- [x] React + Vite
+- [x] Tailwind CSS only for UI styling; no component library
+- [x] Fetch 30 photos from `https://picsum.photos/v2/list?limit=30`
+- [x] Loading and error states
+- [x] Responsive grid: 1 mobile / 2 tablet / 4 desktop columns
+- [x] Author search filters already-fetched photos
+- [x] Favourites managed with `useReducer`
+- [x] Favourites persist in localStorage
+- [x] `useFetchPhotos` returns `photos`, `loading`, `error`
+- [x] `useCallback` on search handler
+- [x] `useMemo` for filtered photo list
+
+## Notes
+
+- Picsum photo records provide `id` and `author`. The displayed image URL is built from the returned photo ID.
+- Favourites store the selected photo objects under `celebrare-photo-gallery-favorites`.
+- If API access fails, the app displays an error message rather than a blank page.
+- This starter uses current Vite and Tailwind CSS v4 package versions. If npm reports engine compatibility warnings, install a supported Node.js LTS version and run `npm install` again.
